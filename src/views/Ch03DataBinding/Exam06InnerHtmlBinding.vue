@@ -20,14 +20,14 @@ function changeData() {
         innerHtml.value = `
             <div>
                 <h5>풍경1</h5>
-                <img src="/images/photos/logo.png" height="150px"/>
+                <img src="/images/photos/photo1.jpg" height="150px"/>
             </div>
         `;
     } else {
         innerHtml.value = `
             <div>
                 <h5>풍경2</h5>
-                <img src="/images/photos/photo1.png" height="150px"/>
+                <img src="/images/photos/photo2.jpg" height="150px"/>
             </div>
         `;
     }

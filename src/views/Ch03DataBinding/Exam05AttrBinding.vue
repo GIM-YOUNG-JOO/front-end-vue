@@ -43,7 +43,7 @@ import { ref } from "vue"
 
 let vueHome = ref("https://vuejs.org");
 let appHome = ref("/");
-let imgName = ref("photo1.png");
+let imgName = ref("photo1.jpg");
 let className1 = ref("fw-bold");
 let className2 = ref("text-warning");
 let isBold = ref(true);
@@ -56,13 +56,13 @@ let toggle = ref(true);
 
 function changeData() {
     if(toggle.value) {
-        imgName.value = "logo.png";
+        imgName.value = "photo2.jpg";
         className1.value = "text-success";
         fontWeight.value="";
         textColor.value = "#0000FF";
         toggle.value = false;
     } else {
-        imgName.value = "photo1.png";
+        imgName.value = "photo1.jpg";
         className1.value = "text-danger";
         fontWeight.value="bold";
         textColor.value = "#00FF00";
