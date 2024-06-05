@@ -18,9 +18,11 @@
                 </thead>
                 <tbody>
                     <tr v-for="board in page.boards" :key="board.bno">
-                        <td class="text-center">{{ board.bno }}</td>
+                        <td class="text-center">
+                            <RouterLink :to="`/Ch08RestAPI/Exam04Board/BoardRead/${board.bno}/${pageNo}`">{{ board.bno }}</RouterLink>
+                        </td>
                         <td>
-                            <RouterLink to="/">{{ board.btitle }}</RouterLink>
+                            <RouterLink :to="`/Ch08RestAPI/Exam04Board/BoardRead?bno=${board.bno}&pageNo=${pageNo}`">{{ board.btitle }}</RouterLink>
                         </td>
                         <td class="text-center">{{ board.bwriter }}</td>
                         <td class="text-center">{{ board.bdate }}</td>
@@ -65,7 +67,7 @@ const page = ref({
 //GET 방식으로 전달된 파라미터 값 얻기
 //http://localhost/Exam04Board/BoardList?PageNo=2
 const route = useRoute();
-const pageNo = route.query.pageNo || 1;
+const pageNo = ref(route.query.pageNo || 1);
 
 async function getBoardList(pageNo) {
     try {
@@ -78,7 +80,7 @@ async function getBoardList(pageNo) {
 }
 
 //게시물 목록 가져오기
-getBoardList(pageNo);
+getBoardList(pageNo.value);
 
 //페이저의 버튼을 클릭했을 때 해당 페이지로 이동하는 메소드 정의
 const router = useRouter();
@@ -90,8 +92,10 @@ function changePageNo(argPageNo) {
 watch(route, (newRoute, oldRoute) => {
     if (newRoute.query.pageNo) {
         getBoardList(newRoute.query.pageNo);
+        pageNo.value = newRoute.query.pageNo;
     } else {
         getBoardList(1);
+        pageNo.value = 1;
     }
 });
 </script>

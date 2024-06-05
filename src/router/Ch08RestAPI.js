@@ -18,6 +18,18 @@ const routes = [
     {
         path: '/Ch08RestAPI/Exam04Board/BoardWrite',
         component: () => import(/* webpackChunkName: "Ch08RestAPI" */ '@/views/Ch08RestAPI/Exam04Board/BoardWrite.vue')
+    },
+    {
+        path: '/Ch08RestAPI/Exam04Board/BoardRead',
+        component: () => import(/* webpackChunkName: "Ch08RestAPI" */ '@/views/Ch08RestAPI/Exam04Board/BoardRead.vue')
+    },
+    {
+        path: '/Ch08RestAPI/Exam04Board/BoardUpdate',
+        component: () => import(/* webpackChunkName: "Ch08RestAPI" */ '@/views/Ch08RestAPI/Exam04Board/BoardUpdate.vue')
+    },
+    {
+        path: '/Ch08RestAPI/Exam04Board/BoardRead/:bno/:pageNo',
+        component: () => import(/* webpackChunkName: "Ch08RestAPI" */ '@/views/Ch08RestAPI/Exam04Board/BoardRead.vue')
     }
 
 ];
