@@ -63,6 +63,7 @@ const store = createStore({
     //브라우저가 재실행될떄 인증 정보를 전역상태로 복구
     loadAuth(context, payload) {
       context.commit("setUserId", localStorage.getItem("userId") || "");
+      console.log("님 실행 됨?" + localStorage.getItem("userId"));
 
       const accessToken = localStorage.getItem("accessToken") || "";
       context.commit("setAccessToken", accessToken);

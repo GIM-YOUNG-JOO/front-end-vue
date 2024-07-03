@@ -16,8 +16,7 @@
                     <!--<img v-if="battach != null" width="300" :src="battach"/>-->
 
                     <!-- 방법2 -->
-                    <img v-if="battach != null" width="300"
-                        :src="`${axios.defaults.baseURL}/board/battach/${board.bno}?accessToken=${$store.state.accessToken}`" />
+                    <img v-if="battach != null" width="300" :src="`${axios.defaults.baseURL}/board/battach/${board.bno}?accessToken=${$store.state.accessToken}`" />
                 </div>
             </div>
 

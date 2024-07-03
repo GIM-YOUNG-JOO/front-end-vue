@@ -19,8 +19,8 @@ function removeAuthHeader() {
 }
 
 //로컬 스토리지에 AccessToken을 저장
-function saveAccesssToken(accessToken){
-    localStorage.setItme("accessToken", accessToken);
+function saveAccessToken(accessToken){
+    localStorage.setItem("accessToken", accessToken);
 }
 
 //로컬 스토리지에 있는 AccessToken을 읽고 공통 헤더에 추가
@@ -36,6 +36,6 @@ function readAccessToken() {
 export default {
     addAuthHeader,
     removeAuthHeader,
-    saveAccesssToken,
+    saveAccessToken,
     readAccessToken
 }
